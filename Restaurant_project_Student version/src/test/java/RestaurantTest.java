@@ -63,5 +63,26 @@ class RestaurantTest {
                 ()->restaurant.removeFromMenu("French fries"));
     }
 
+    @Test
+    public void getOrderTotalPrice(){
+        // Adding more items to menu
+        restaurant.addToMenu("Pizza capsicum", 299);
+        restaurant.addToMenu("Chhole Bhature", 150);
+        restaurant.addToMenu("Rava Dosa", 260);
+        restaurant.addToMenu("Hyderabadi Chicken Biryani", 250);
+        restaurant.addToMenu("Special Thaali", 390);
+        restaurant.addToMenu("Vada Paav", 80);
+
+        // Selecting items from menu
+        List<String> itemList = new ArrayList<>();
+        itemList.add("Sweet corn soup");
+        itemList.add("Chhole Bhature");
+        itemList.add("Hyderabadi Chicken Biryani");
+        itemList.add("Rava Dosa");
+
+        int totalOrderCost = restaurant.calculateOrderPrice(itemList);
+        assertEquals((119+150+250+260),totalOrderCost);
+    }
+
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 }
