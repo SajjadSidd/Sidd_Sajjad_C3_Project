@@ -1,3 +1,4 @@
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -27,6 +28,13 @@ class RestaurantTest {
         restaurant.addToMenu("Hyderabadi Chicken Biryani", 250);
         restaurant.addToMenu("Special Thaali", 390);
         restaurant.addToMenu("Vada Paav", 80);
+
+        System.out.println("Restaurant Initialized.");
+    }
+
+    @AfterAll
+    public static void clear(){
+        System.out.println("Testing Completed!");
     }
 
     //>>>>>>>>>>>>>>>>>>>>>>>>>OPEN/CLOSED<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
