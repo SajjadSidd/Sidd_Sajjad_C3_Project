@@ -12,7 +12,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class RestaurantTest {
     Restaurant restaurant;
-    //REFACTOR ALL THE REPEATED LINES OF CODE
     @BeforeEach
     public void init(){
         LocalTime openingTime = LocalTime.parse("10:30:00");
